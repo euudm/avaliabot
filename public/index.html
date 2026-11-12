@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AvaliaBot — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <header class="header">
+      <div class="header-left">
+        <span class="logo">AvaliaBot</span>
+        <span class="business-name" id="businessName">—</span>
+      </div>
+      <div class="header-right">
+        <div class="stats">
+          <span class="stat-label">Este mês</span>
+          <span class="stat-value" id="monthStats">— avaliações</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <!-- Adicionar contato -->
+      <section class="add-section">
+        <h2 class="section-title">Adicionar contato</h2>
+        <form class="add-form" id="addForm">
+          <input type="text" id="inputName" placeholder="Nome do cliente" required />
+          <input type="tel" id="inputPhone" placeholder="Telefone com DDD (ex: 11940643165)" required />
+          <input type="text" id="inputService" placeholder="Serviço / reunião (opcional)" />
+          <button type="submit" class="btn-add">+ Adicionar</button>
+        </form>
+        <p class="add-error" id="addError"></p>
+      </section>
+
+      <!-- Lista do dia -->
+      <section class="list-section">
+        <div class="list-header">
+          <h2 class="section-title">Lista de hoje <span class="count" id="pendingCount">0</span></h2>
+          <button class="btn-send" id="btnSend" disabled>Enviar selecionados →</button>
+        </div>
+
+        <div class="contact-list" id="contactList">
+          <div class="empty-state" id="emptyState">
+            <p>Nenhum contato adicionado hoje.</p>
+            <p class="empty-sub">Adicione acima ou encaminhe um contato pelo WhatsApp para o bot.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Histórico de envios -->
+      <section class="history-section">
+        <h2 class="section-title">Enviados hoje</h2>
+        <div class="sent-list" id="sentList">
+          <div class="empty-state">
+            <p>Nenhum envio hoje ainda.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Toast de notificação -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

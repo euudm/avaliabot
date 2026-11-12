@@ -1,0 +1,11 @@
+!.env.example
+*.log
+.DS_Store
+.env
+.env.*
+.netlify/
+__pycache__/
+auth_info/
+db.json
+dist/
+node_modules/
